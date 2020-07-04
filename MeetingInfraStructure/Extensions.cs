@@ -9,6 +9,7 @@ namespace MeetingInfraStructure
     public static class Extensions
     {
 
+
         public static string AsString(this XmlDocument prmXmlDocument)
         {
             using (StringWriter tmpStringWriter = new StringWriter())
