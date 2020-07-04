@@ -10,6 +10,7 @@ namespace MeetingInfraStructure
     {
 
 
+
         public static string AsString(this XmlDocument prmXmlDocument)
         {
             using (StringWriter tmpStringWriter = new StringWriter())
