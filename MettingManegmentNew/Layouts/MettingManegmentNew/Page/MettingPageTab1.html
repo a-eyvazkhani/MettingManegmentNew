@@ -1,0 +1,170 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script src="../../../../_layouts/15/MettingManegmentNew/js/MettingTab1.js"></script>
+
+    <!--<script src="../js/MettingTab1.js"></script>-->
+  
+</head>
+<body>
+    <style>
+        #TABMeetingReg-3 {
+            min-height: 600px;
+        }
+
+        #GRDAddedInnerUsers > table > tbody > tr > td {
+            text-align: center;
+        }
+
+        #GRDTimingAddedInnerUsers > table > tbody > tr > td {
+            text-align: center;
+        }
+
+        #GRDOutAddedUsers > table > tbody > tr > td {
+            text-align: center;
+        }
+
+        #GRDTimingAddedOuterUsers > table > tbody > tr > td {
+            text-align: center;
+        }
+
+        #GRDGetInformed > table > tbody > tr > td {
+            text-align: center;
+        }
+
+        #GRDGetInformed > table > tbody > tr > td {
+            text-align: center;
+        }
+
+        #GRDAlert > table > tbody > tr > td {
+            text-align: center;
+        }
+    </style>
+
+    <div id="addeditpanel" >
+        
+        
+            <div class="k-lable-text" id="ButtonPanle">
+                <button id="BTNFinalRegister" type="button" onclick="SabtJalesat(); return false;" class="k-button k-primary">
+                    ثبت
+                </button>
+                <button id="BTNFinalCancel" type="button" class="k-button  K-secondary" onclick="btnCanselMetting()" style="width:60px !important;">
+                    انصراف
+                </button>
+            </div>
+    
+               
+
+
+                <!--<%--______________________________________properties______________________________--%>-->
+                <div class="k-lable-compelet ">
+
+                    <div class="col-12 k-margin-top ">
+                        <span class="k-lable-text wrapper ">
+                            <b>قالب جلسه</b>
+                            <input id="DDLMeetingTemplate" class="k-textbox k-text-center">
+                        </span>
+                        <span class="k-lable-text wrapper ">
+                            <b>واحد مربوطه</b>
+                            <input id="DDLUnit" class="k-textbox k-text-center">
+                        </span>
+                        <span class="k-lable-text wrapper ">
+                            <b> عنوان</b>
+                            <!--<textarea id="" style="height:30px" class="k-textbox k-text-center " ></textarea>-->
+                            <input id="TXTMeetingTitle" style="width:300px" class="k-textbox k-text-center">
+                            <!--<input id="" >-->
+                            <label style="color:red;">*</label>
+                        </span>
+                    </div>
+
+
+                    <div class="k-margin-top ">
+                        <span><b>تاریخ برگزاری</b></span>
+                        <div class="k-lable-text wrapper" style="display:inline-block">
+                            <input id="DATMeetingDate" style="display:inline-block;background-color:white" class="k-textbox k-text-center" placeholder="تاریخ جلسه">
+                        </div>
+                        <span>
+                            <label style="color:red;">*</label>
+                        </span>
+                        <span class="k-lable-text wrapper">
+                            <b>از   </b>
+                            <input id="TIMStartTime" class="k-textbox k-text-center" placeholder="ساعت شروع">
+                            <label style="color:red;">*</label>
+                        </span>
+                        <span class="k-lable-text wrapper">
+                            <!--<%--   <img src="../../../../_layouts/15/Samix.EPM/Icons/clock_15.png" class="span-picture imgstyl" />--%>-->
+                            <b>تا   </b>
+                            <input id="TIMFinishTime" class="k-textbox k-text-center" placeholder="ساعت پایان">
+                            <label style="color:red;">*</label>
+                        </span>
+                    </div>
+                    <div class="k-margin-top">
+                        <span class="k-lable-text wrapper">
+                            <b>منشی </b>
+                            <input id="DDLRegisterer" class="k-textbox k-text-center" placeholder="منشی جلسه">
+                        </span>
+                        <span class="k-lable-text wrapper">
+                            <b>دبیر جلسه</b>
+                            <input id="DDLMeetingSecretary" class="k-textbox k-text-center" placeholder="دبیر جلسه">
+                            <label style="color:red;">*</label>
+                        </span>
+                    </div>
+
+                    <div class="k-margin-top">
+                        <span class="k-lable-text wrapper">
+                            <b>مکان</b>
+                            <input id="DDLMeetingPlace" class="k-textbox  k-text-center" placeholder="مکان جلسه">
+                            <label style="color:red;">*</label>
+                        </span>
+                    </div>
+
+                    <div class="k-margin-top">
+                        <span class="k-lable-text wrapper">
+                            <b></b>
+                            <input id="TXTPlaceAddress" style="width:700px;" class="k-textbox" readonly="readonly" placeholder="آدرس محل برگزاری">
+                        </span>
+                        <!--<span class="k-lable-text wrapper">
+                            <button class="k-button k-primary"  onclick="ShowMap(); return false;" id="showmap">
+                                <img style="height:20px; " src="../../../../_layouts/15/Samix.EPM/Icons/chart_curve_edit.png" />
+                            </button>
+                        </span>-->
+                    </div>
+
+                    <div class="k-margin-top" style="display:none;">
+                        <div id="GRDTimingPlace"></div>
+                    </div>
+                    <div class="k-lable-compelet k-margin-top">
+
+                        <div id="gaugeplace" style="padding:0px;background-color:white;direction:rtl;"></div>
+                    </div>
+                    <div class="k-margin-top ">
+                        <div class="k-lable-text">
+                            <b>دستور جلسه</b>
+                            <textarea id="TXTMeetingAgenda" style="width:80%; height:150px; resize:none;" placeholder="دستور جلسه " title="دستور جلسه"></textarea>
+                        </div>
+                    </div>
+
+                    <!--<div class="k-margin-top" style="display:none;">
+                        <div id="GRDTimingPlace"></div>
+                    </div>-->
+                    <div class="k-lable-compelet k-margin-top">
+
+                        <div id="gaugeplace" style="padding:0px;background-color:white;direction:rtl;"></div>
+                    </div>
+
+      
+
+
+
+               
+            </div>
+
+    
+
+
+    </div>
+</body>
+</html>

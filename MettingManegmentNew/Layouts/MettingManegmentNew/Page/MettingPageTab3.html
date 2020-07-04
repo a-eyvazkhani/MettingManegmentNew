@@ -1,0 +1,70 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script src="../../../../_layouts/15/MettingManegmentNew/js/MettingTab3.js"></script>
+</head>
+<body>
+    <div class="k-lable-compelet">
+
+        <div class="header-panel">
+            <h5>
+                تنظیم هشدار جدید
+            </h5>
+
+
+        </div>
+        <div class="content-panel ">
+            <div class="k-lable-text k-margin-top">
+                <input type="checkbox" id="CHKRemindBeforeMeeting" onclick="ShowAndHide('addalert');" class="k-checkbox">
+                <label class="k-checkbox-label " for="CHKRemindBeforeMeeting">یادآوری قبل از جلسه</label>
+                <input type="checkbox" id="CHKSendSmsRightNow" class="k-checkbox checkboxalert" onchange="ChengSmsChecked();">
+                <label class="k-checkbox-label " for="CHKSendSmsRightNow" >ارسال پیامک اطلاع رسانی در همین لحظه</label>
+                <input type="checkbox" id="CHKSendMailRightNow" class="k-checkbox checkboxalert" onchange="ChengMailChecked();">
+                <label class="k-checkbox-label " for="CHKSendMailRightNow">ارسال ایمیل اطلاع رسانی در همین لحظه</label>
+            </div>
+
+            <div id="addalert" style="display: none">
+
+
+                <div id="SPNAlertDateTime" class="k-lable-text k-margin-top">
+                    <h5> زمان ارسال هشدار یادآوری</h5>
+
+                    <span><b>تاریخ</b></span>
+                    <span class="wrapper" style="display:inline-block">
+                        <input id="DATAlertDate" style="display:inline-block" class="k-textbox" placeholder="تاریخ ">
+                    </span>
+
+                    <span class="wrapper">
+
+                        <b>ساعت</b>
+
+                        <input id="TIMStartAlertTime" placeholder="ساعت ارسال هشدار">
+                    </span>
+
+                    <span class="wrapper">
+
+                        <b>نوع</b>
+
+                        <input id="DDLAlertType" class="k-textbox" placeholder="ساعت ارسال هشدار">
+
+                        <button type="button" class="k-button k-primary" id="FillAlerts" onclick="RegisteriAlert()"><b>ثبت</b> </button>
+                    </span>
+                </div>
+            </div>
+            <div class="header-panel">
+                لیست هشدار های ثبت شده
+                <button id="BTNRemoveAllAlerts" onclick="RemoveAllAlerts(); return false;" class="k-button  K-secondary" style="width:100px;position:absolute;left:95px;">
+                    حذف همه
+                </button>
+            </div>
+            <div class="content-panel">
+                <div id="GRDAlert"></div>
+            </div>
+
+        </div>
+    </div>
+</body>
+</html>

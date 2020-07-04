@@ -1,0 +1,1 @@
+﻿<%@ WebService Language="C#" Class="MettingManegmentNew.SettingWebService, MettingManegmentNew, Version=1.0.0.0, Culture=neutral, PublicKeyToken=995144948feda7d1" %>

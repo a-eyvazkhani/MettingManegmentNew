@@ -1,0 +1,161 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{EC1396FC-7F69-4928-B733-233D978710B6}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MettingManegmentNew</RootNamespace>
+    <AssemblyName>MettingManegmentNew</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetOfficeVersion>15.0</TargetOfficeVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{C1CDDADD-2546-481F-9697-4EA41081F2FC};{14822709-B5A1-4724-98CA-57A101D1B079};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <SandboxedSolution>False</SandboxedSolution>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>key.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="Microsoft.SharePoint" />
+    <Reference Include="Microsoft.SharePoint.Client.ServerRuntime" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ISAPI\MettingManegmentNew\MettingWebService.asmx.cs">
+      <DependentUpon>MettingWebService.asmx</DependentUpon>
+    </Compile>
+    <Compile Include="ISAPI\MettingManegmentNew\SettingWebService.asmx.cs">
+      <DependentUpon>SettingWebService.asmx</DependentUpon>
+    </Compile>
+    <Compile Include="MettingManegVW\MettingManegVW.cs" />
+    <Compile Include="MettingManegVW\MettingManegVWUserControl.ascx.cs">
+      <DependentUpon>MettingManegVWUserControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MettingManegVW\MettingManegVWUserControl.ascx.designer.cs">
+      <DependentUpon>MettingManegVWUserControl.ascx.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MinutVW\MinutVW.cs" />
+    <Compile Include="MinutVW\MinutVWUserControl.ascx.cs">
+      <DependentUpon>MinutVWUserControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MinutVW\MinutVWUserControl.ascx.designer.cs">
+      <DependentUpon>MinutVWUserControl.ascx.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Features\Feature1\Feature1.feature">
+      <FeatureId>{94c1cb60-47b3-4203-ad75-3cf790d215b8}</FeatureId>
+    </None>
+    <None Include="Images\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{5d00712c-cffd-4c8c-9af5-efddfb4fe60f}</SharePointProjectItemId>
+    </None>
+    <None Include="ISAPI\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{010d777e-6f0b-4351-9390-c7f3b6329020}</SharePointProjectItemId>
+    </None>
+    <None Include="key.snk" />
+    <None Include="Layouts\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{12b42380-1521-4da8-a709-b8ee4631fd71}</SharePointProjectItemId>
+    </None>
+    <None Include="MettingManegVW\MettingManegVW.webpart" />
+    <None Include="MettingManegVW\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{d732fa3a-1edc-4509-ab18-e8585e8f9772}</SharePointProjectItemId>
+    </None>
+    <None Include="MinutVW\MinutVW.webpart" />
+    <None Include="MinutVW\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{f9a8b822-3527-4e41-803f-a966a7f69021}</SharePointProjectItemId>
+    </None>
+    <None Include="Package\Package.package">
+      <PackageId>{dd8afbff-5156-4446-801f-925116c612c1}</PackageId>
+    </None>
+    <None Include="Package\Package.Template.xml">
+      <DependentUpon>Package.package</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Images\MettingManegmentNew\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Features\Feature1\Feature1.Template.xml">
+      <DependentUpon>Feature1.feature</DependentUpon>
+    </Content>
+    <Content Include="ISAPI\MettingManegmentNew\MettingWebService.asmx" />
+    <Content Include="ISAPI\MettingManegmentNew\SettingWebService.asmx" />
+    <Content Include="Layouts\MettingManegmentNew\js\MettingManeger.js" />
+    <Content Include="Layouts\MettingManegmentNew\js\MettingTab1.js" />
+    <Content Include="Layouts\MettingManegmentNew\js\MettingTab2.js" />
+    <Content Include="Layouts\MettingManegmentNew\js\MettingTab3.js" />
+    <Content Include="Layouts\MettingManegmentNew\js\Minut\CreateMinutControl.js" />
+    <Content Include="Layouts\MettingManegmentNew\js\Minut\MinutManeger.js" />
+    <Content Include="Layouts\MettingManegmentNew\js\Minut\MinutTab1.js" />
+    <Content Include="Layouts\MettingManegmentNew\Page\MettingPageTab1.html" />
+    <Content Include="Layouts\MettingManegmentNew\Page\MettingPageTab2.html" />
+    <Content Include="Layouts\MettingManegmentNew\Page\MettingPageTab3.html" />
+    <Content Include="Layouts\MettingManegmentNew\PsgeMinut1\MinutManegment.html" />
+    <Content Include="Layouts\MettingManegmentNew\PsgeMinut1\MinutTab1.html" />
+    <Content Include="Layouts\MettingManegmentNew\PsgeMinut1\MinutTab2.html" />
+    <Content Include="Layouts\MettingManegmentNew\PsgeMinut\MinutTab1.html" />
+    <Content Include="Layouts\MettingManegmentNew\PsgeMinut\MinutTab2.html" />
+    <Content Include="Layouts\MettingManegmentNew\Public\ChengTimeAndInt.js" />
+    <Content Include="MettingManegVW\Elements.xml" />
+    <Content Include="MettingManegVW\MettingManegVWUserControl.ascx" />
+    <Content Include="MinutVW\Elements.xml" />
+    <Content Include="MinutVW\MinutVWUserControl.ascx" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BLLMettingManegmentNew\BLLMettingManegmentNew.csproj">
+      <Project>{2C81C128-E27D-4377-9742-450562F230C9}</Project>
+      <Name>BLLMettingManegmentNew</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CLLMettingManegmentNew\CLLMettingManegmentNew.csproj">
+      <Project>{12f61423-9231-434a-8a59-624a5b930368}</Project>
+      <Name>CLLMettingManegmentNew</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(VSToolsPath)\SharePointTools\Microsoft.VisualStudio.SharePoint.targets" Condition="'$(VSToolsPath)' != ''" />
+</Project>

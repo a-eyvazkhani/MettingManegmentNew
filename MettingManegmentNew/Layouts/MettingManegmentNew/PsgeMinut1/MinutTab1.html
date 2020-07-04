@@ -1,0 +1,192 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+  
+    <script src="../../../../_layouts/15/MettingManegmentNew/js/Minut/CreateMinutControl.js"></script>
+    <style>
+        .td-border {
+            border: solid;
+            padding: 1px;
+            border-width: 1px;
+            border-color: #4d4d4d;
+        }
+
+        .td-title {
+            width: 60px;
+        }
+
+        .border-pdf {
+            border: solid;
+            border-width: 3px;
+            border-color: #4d4d4d;
+            min-height: 900px;
+        }
+
+        .border-1 {
+            padding: 5px;
+            height: 20px;
+            border: solid;
+            border-width: 0px;
+            border-color: #4d4d4d;
+        }
+
+        #GRDTasks > table > tbody > tr > td {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+
+    <div id="AllContent">
+
+        <div class="header-panel k-margin-top">
+            <div>
+                <b style="color:#598bd8; margin-right:0 auto;">تعیین وضعیت جلسه</b>
+            </div>
+        </div>
+        <div class="content-panel">
+            <span>
+                <label for="RADIsHeld"><b>جلسه برگزار شده است</b></label>
+                <input type="radio" onchange="ChenqRedioRADIsHeld()" id="RADIsHeld" value="1" name="Group01">
+
+                <label style="margin-right:25px;" for="RADIsNotHeld"><b>جلسه برگزار نشده است</b></label>
+                <input type="radio" onchange="ChenqRedioRADIsNotHeld()" id="RADIsNotHeld" value="2" name="Group01">
+
+            </span>
+            <span id="mainbuttons" style="display:none;margin-right:40% ">
+                <button id="BTNFinalRegister" onclick="RegisterClic(); return false;" class="k-button k-primary ">
+                    ثبت
+                </button>
+                <button id="BTNFinalRegister" onclick="FinalRegisterFinalClic(); return false;" class="k-button k-primary ">
+                    ثبت نهایی
+                </button>
+                <button id="BTNCancel" onclick="CancelMinut(); return false;" class="k-button k-primary">
+                    انصراف
+                </button>
+
+            </span>
+        </div>
+
+
+        <div class="k-margin-top">
+            <div id="panelshowhideisheld" style="display:none">
+                <div class="header-panel k-margin-top">
+                    <b style="color:#598bd8">مشخصات</b>
+                </div>
+
+                <div class="content-panel">
+
+                    <div class="col-11 k-margin-top ">
+
+                        <span class="k-lable-text wrapper">
+                            <b>عنوان جلسه  </b>
+                            <input id="TXTMinutTitle" class="k-textbox k-text-center" readonly>
+
+                        </span>
+
+                        <span class="k-lable-text wrapper">
+                            <b>
+                                شرح صورت جلسه
+                            </b>
+                            <textarea id="TXTMinutDescription" cols="70" rows="8" style="resize:none;width:400px;" class="k-textbox k-text-center"></textarea>
+
+                        </span>
+                    </div>
+                </div>
+
+
+                <div class="header-panel k-margin-top">
+                    <div style="text-align:center">
+                        <b style="color:#598bd8">اقدامات</b>
+                    </div>
+                </div>
+                <div class="content-panel">
+                    <div id="GRDTasks" style="margin-top:5px;"></div>
+
+                    <table id="Tasks" class="border-1" style="width:97%;margin-top:5px; margin-left:-10px;margin-right:10px;background-color:#ccd9dd;text-align:center;border-color:white">
+                        <tbody>
+
+                            <tr>
+                                <td class="td-border" style="border-color:white;width:20%">
+                                    <!--<input id="" style="width:100%" class="k-textbox  k-text-center" placeholder="">-->
+                                    <textarea id="TXTTaskTitle" style="width:90%;height:30px" class="k-textbox k-text-center" placeholder="عنوان اقدام"></textarea>
+
+                                </td>
+                                <td class="td-border" style="border-color:white;width:15%">
+                                    <input id="DATTaskDate" class="k-textbox k-text-center" style="width:100%;background-color:white" placeholder="تاریخ اقدام">
+
+                                </td>
+                                <td class="td-border" style="border-color:white; width:15%">
+                                    <select id="DDLUnitCompanies" class="k-text-center" style="width:100%"></select>
+
+                                </td>
+                                <td class="td-border" style="border-color:white; width:10%">
+
+                                    <input id="TxtEstimatedTime" class="k-textbox k-text-center" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" maxlength="6" style="width:100%">
+                                    <!--<input id="TxtEstimatedTime" class="k-textbox  k-text-center" type="number" style="width:100%" >-->
+
+
+                                </td>
+                                <td class="td-border" style="border-color:white; width:15%">
+                                    <select id="DDLUsers" class="k-text-center" style="width:100%"></select>
+
+                                </td>
+                                <td class="td-border" style="border-color:white; width:15%">
+                                    <input id="DDLApprover" class="k-textbox  k-text-center" style="width:100%" placeholder="تایید کننده جلسه">
+
+                                </td>
+
+                                <td class="td-border" style="border-color:white; width:7%">
+                                    <button id="BTNAddTask" onclick="AddTasks(); return false;" style="width:100%" class="k-button k-primary ">
+                                        افزودن
+                                    </button>
+                                </td>
+                            </tr>
+
+
+
+
+
+                        </tbody>
+
+                    </table>
+
+
+
+
+                </div>
+
+                <div class="header-panel k-margin-top">
+                    <div style="text-align:center">
+                        <b style="color:#598bd8">  شرکت کنندگان</b>
+                    </div>
+                </div>
+
+                <div class="content-panel">
+
+                    <div class="k-margin-top" style="display: inline-table; width: 48%;">
+
+                        <div class="k-lable-text" id="GRDMeetingPresents" style="text-align: center; margin-right:15px;margin-bottom:15px"> شرکت کنندگان درون سازمانی</div>
+
+                    </div>
+                    <div class="k-margin-top" style="display: inline-table; width: 48%;">
+
+                        <div class="k-lable-text" id="GRDMeetingOutPresents" style="text-align: center; margin-right:15px;margin-bottom:15px"> شرکت کنندگان برون سازمانی</div>
+
+                    </div>
+                </div>
+                <button id="BTNPDF" onclick="ShowPreviewPDF(); return false;" class="k-button k-primary k-margin-top">
+                    <b> پیش نمایش  صورت جلسه</b>
+
+                </button>
+
+            </div>
+
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="dd8afbff-5156-4446-801f-925116c612c1" solutionId="dd8afbff-5156-4446-801f-925116c612c1" resetWebServer="false" sharePointProductVersion="15.0" name="MettingManegmentNew" xmlns="http://schemas.microsoft.com/VisualStudio/2008/SharePointTools/PackageModel">
+  <features>
+    <featureReference itemId="94c1cb60-47b3-4203-ad75-3cf790d215b8" />
+  </features>
+  <projectItems>
+    <projectItemReference itemId="5d00712c-cffd-4c8c-9af5-efddfb4fe60f" />
+    <projectItemReference itemId="010d777e-6f0b-4351-9390-c7f3b6329020" />
+    <projectItemReference itemId="12b42380-1521-4da8-a709-b8ee4631fd71" />
+  </projectItems>
+</package>
